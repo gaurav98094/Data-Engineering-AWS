@@ -98,3 +98,14 @@ It's important to note that these private IP address ranges are not unique; mult
 - Default VPC has the internet connectivity and all EC2 inside it have public IPV4 address.
 - We also get public and private DNS names.
 
+# VPC in AWS
+
+- You can have multiple VPC in one region (5 max - soft limit)
+- Because VPC is private, only private IP are allowed
+i.e 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
+
+*Note : Your VPC cidr should not overlap with your other network*
+
+#### Creating Your VPC
+
+<img src="images/vpc2.png">
