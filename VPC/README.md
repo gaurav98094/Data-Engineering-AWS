@@ -109,3 +109,34 @@ i.e 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
 #### Creating Your VPC
 
 <img src="images/vpc2.png">
+
+<br>
+
+# VPC – Subnet (IPv4)
+
+- AWS reserves 5 IP addresses (first 4 & last 1) in each subnet
+- These 5 IP addresses are not available for use and can’t be assigned to an EC2 instance
+
+*Example: if CIDR block 10.0.0.0/24, then reserved IP addresses are:*
+- 10.0.0.0 – Network Address
+- 10.0.0.1 – reserved by AWS for the VPC router
+- 10.0.0.2 – reserved by AWS for mapping to Amazon-provided DNS
+- 10.0.0.3 – reserved by AWS for future use
+- 10.0.0.255 – Network Broadcast Address.AWS does not support broadcast in a VPC, therefore the address is reserved.
+
+# Internet Gateway (IGW)
+- Allows resources (e.g., EC2 instances) in a VPC connect to the Internet
+- It scales horizontally and is highly available and redundant
+- Must be created separately from a VPC
+- One VPC can only be attached to one IGW and vice versa
+- Internet Gateways on their own do not allow Internet access…
+- Route tables must also be edited!
+
+<img src="images/vpc3.png">
+
+
+# Bastion Host
+
+A bastion host, also known as a jump host, is a server that sits in a public subnet of your network and acts as an intermediary between your trusted network and an external network, typically the internet. It's used to improve security by controlling access to your internal network. Users can SSH or RDP into the bastion host and then use it to connect to other resources within your vpc.
+
+<img src="images/vpc4.png" height = "600px" width="100%">
