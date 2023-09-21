@@ -141,6 +141,7 @@ A bastion host, also known as a jump host, is a server that sits in a public sub
 
 <img src="images/vpc4.png" height = "600px" width="100%">
 
+<br>
 
 # NAT Gateway
 
@@ -148,3 +149,21 @@ A NAT gateway is a Network Address Translation (NAT) service. You can use a NAT 
 
 
 <img src="images/vpc5.png">
+
+<br>
+
+# NACL
+
+- **Purpose**: NACLs are a network-level firewall in AWS VPCs.
+- **Stateless**: They are stateless, meaning inbound and outbound rules must be configured separately.
+- **Rule Order**: Rules are evaluated in ascending order based on their rule numbers.
+- **Default NACL**: Every VPC has a default NACL that allows all traffic.
+- **Inbound and Outbound Rules**: You can create rules for both incoming and outgoing traffic.
+- **Rule Types**: Rules are based on IP addresses (CIDR blocks) and port ranges.
+- **Use Cases**: NACLs are used for basic network security and segmentation within a VPC.
+- **Logging and Monitoring**: AWS provides logging and monitoring for NACLs.
+- **Best Practices**: Follow the principle of least privilege and regularly review rules for security. Use in combination with Security Groups for comprehensive security.
+<img src="images/vpc6.png">
+<img src="images/vpc7.png">
+<img src="images/vpc8.png">
+<img src="images/vpc9.png">
