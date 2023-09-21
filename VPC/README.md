@@ -140,3 +140,11 @@ i.e 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
 A bastion host, also known as a jump host, is a server that sits in a public subnet of your network and acts as an intermediary between your trusted network and an external network, typically the internet. It's used to improve security by controlling access to your internal network. Users can SSH or RDP into the bastion host and then use it to connect to other resources within your vpc.
 
 <img src="images/vpc4.png" height = "600px" width="100%">
+
+
+# NAT Gateway
+
+A NAT gateway is a Network Address Translation (NAT) service. You can use a NAT gateway so that instances in a private subnet can connect to services outside your VPC but external services cannot initiate a connection with those instances.
+
+
+<img src="images/vpc5.png">
