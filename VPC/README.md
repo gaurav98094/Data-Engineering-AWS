@@ -167,3 +167,27 @@ A NAT gateway is a Network Address Translation (NAT) service. You can use a NAT 
 <img src="images/vpc7.png">
 <img src="images/vpc8.png">
 <img src="images/vpc9.png">
+
+# VPC Peering
+
+VPC peering, or Virtual Private Cloud peering, is a networking feature provided by cloud service providers like Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure. It allows you to connect two virtual private clouds (VPCs) or virtual networks in a secure and private manner, enabling them to communicate with each other as if they were on the same network, even if they are in different regions or availability zones within the same cloud provider.
+
+Here are some key points about VPC peering:
+
+1. **Private Connectivity**: VPC peering provides private connectivity between VPCs. Traffic between peered VPCs does not traverse the public internet, ensuring security and lower latency.
+
+2. **Transitive Peering**: In most cases, VPC peering is not transitive. This means that if VPC A is peered with VPC B and VPC B is peered with VPC C, VPC A and VPC C cannot communicate directly via the peering connection. You would need to set up separate peering connections between A and C if you want them to communicate.
+
+3. **Routing**: When you create a VPC peering connection, route tables in both VPCs need to be updated to include the appropriate routes. This ensures that traffic destined for the peered VPC is routed correctly.
+
+4. **CIDR Blocks**: The IP address ranges (CIDR blocks) of the VPCs you want to peer must not overlap. They should be distinct to avoid routing conflicts.
+
+5. **Security Groups and Network ACLs**: Security groups and network access control lists (ACLs) control inbound and outbound traffic in a VPC. You may need to adjust these settings to allow traffic between peered VPCs.
+
+6. **Cross-Region Peering**: In AWS, you can peer VPCs in different regions, but this requires additional setup, including using the VPC peering connection for the inter-region traffic and configuring appropriate routes.
+
+7. **Data Transfer Costs**: Depending on your cloud provider and the region, there may be data transfer costs associated with VPC peering, so it's essential to understand the pricing for your specific setup.
+
+VPC peering is commonly used to create complex network architectures, facilitate application scaling, and build redundancy and failover solutions in the cloud. It is a valuable feature for organizations that need to connect different parts of their infrastructure or provide services across multiple VPCs while maintaining network isolation and security.
+
+<img src="images/vpc10.webp">
